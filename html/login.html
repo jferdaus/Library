@@ -25,7 +25,7 @@
 
 
 <nav><p>
-<button><a href="../index.php" style="text-decoration:none; color:black"> Home</a></Button></p>
+<button><a href="../index.html" style="text-decoration:none; color:black"> Home</a></Button></p>
 </nav>
 
 
@@ -43,36 +43,6 @@
 <div id= "signin4"> 
 
 
-<?php
-
-$useridError = $passwordError = "";
-
-if($_SERVER['REQUEST_METHOD'] == "POST"){
-
-    $valid = true;
-
-    if(empty($_POST['userid'])){
-        $valid=false;
-        $useridError = '<span style = "font-size:12px; color:red">** Username is missing</span>';
-		
-    }
-	
-	
-
-    if(empty($_POST['password'])){
-        $valid=false;
-        $passwordError = '<span style = "font-size:12px; color:red" >** Password is missing</span>'; 
-    }
-
-    if($valid){
-        header('location:admin.php');
-        exit();
-    }
-}
-
-?>
-
-
 
 <br>
 <form action=" " method="post">
@@ -84,42 +54,6 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
   <input type="submit" value="Login"/>
 </form>
 
-<?php
-/*
-$useridErr = $password1Err = "" ;
-$userid = $password1= "" ;
-
-if ($_SERVER["REQUEST_METHOD"] == "POST"){
-	
-if (empty($_POST["userid"])){
-		$useridErr = "User ID is Required" ;	
-	}
-	
-	else 
-	$userid = test_input($_POST["userid"]) ;	
-
-if (empty($_POST["password1"])){
-		$password1Err = "Password is Required" ;	
-	}
-	
-	else 
-	$password1 = test_input($_POST["password1"]) ;	
-
-
-}
-
-function test_input($data){
-	$data = trim($data);
-	$data = stripslashes($data);
-	$data = htmlspecialchars($data);
-    return $data ;	
-}
-
-
-
-*/
-
-?>
 
 
 
