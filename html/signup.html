@@ -155,16 +155,7 @@ Password:
 
 <div id= "signup3">
 <p><b>Information Details:</b>
-<?php
-if ($name && $email && $userid && $password1){
-	echo  ' <p style="color:red"> *** Registered Successfully</p>'; 
-	
-}
-else 
-{echo ' <p style="color:red"> *** For Registration, Please Enter Required Information in the left box.</p>';}	
-	
 
-?>
 </p><hr>
 
 <table  id="newtable1">
@@ -196,34 +187,8 @@ else
 
 </table>
 <br><br> <br>
-<?php
 
-if ($name && $email && $userid && $password1){
-	echo ' <button><a href="admin.php" style="text-decoration:none; color:black"> log in </a></Button>' ;
-echo ' <span><button><a href="../index.php" style="text-decoration:none; color:black"> log out </a></Button>' ;
-
-
-
-	include "create_database.php";
-	include "createtable.php";
-	$data = "INSERT INTO userInfo(id, name, userid, password, email, department, major, minor)
-
-VALUES('', '$name','$userid','$password1', '$email', '$department', '$major', '$minor')";
-
-if (mysqli_query($conn,$data)){
-	
-	echo " " ;
-	
-}
-
-else {
-    echo " System Error " . mysqli_error($conn);
-}
-
-
-
-}
- session_destroy();?>
+ 
 </div>
 </section>
 
