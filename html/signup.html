@@ -19,7 +19,7 @@ session_start();
 <body>
 <header><h4>Shapla Academy Library Database</h4></header>
 <nav><p>
-<button><a href="../index.php" style="text-decoration:none; color:black"> Home</a></Button></p>
+<button><a href="../index.html" style="text-decoration:none; color:black"> Home</a></Button></p>
 </nav>
 
 <section>
@@ -28,80 +28,6 @@ Sign up Form: Please Sign up if you are an admin or a student of Shapla Academy.
 </div>
 
 <div id= "signup2">
-
-<?php
-
-$nameErr = $departmentErr = $majorErr = $minorErr = $emailErr = $useridErr = $password1Err = "" ;
-$name = $department = $major = $minor = $email = $userid = $password1= "" ;
-
-if ($_SERVER["REQUEST_METHOD"] == "POST"){
-	
-if (empty($_POST["name"])){
-		$nameErr = "Name is Required" ;	
-	}
-	else 
-	$name = test_input($_POST["name"]) ;	
-
-if (empty($_POST["department"])){
-		$department = " " ;	
-	}
-	
-	else 
-	$department = test_input($_POST["department"]) ;	
-
-
-if (empty($_POST["major"])){
-		$major = " " ;	
-	}
-	
-	else 
-	$major = test_input($_POST["major"]) ;
-
-if (empty($_POST["minor"])){
-		$minor = " " ;	
-	}
-	
-	else 
-	$minor = test_input($_POST["minor"]) ;
-
-
-if (empty($_POST["email"])){
-		$emailErr = "Email is Required" ;	
-	}
-	
-	else {
-	$email = test_input($_POST["email"]) ;	
-if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-      $emailErr = "Invalid email format"; 
-    } }
-if (empty($_POST["userid"])){
-		$useridErr = "Academy ID is Required" ;	
-	}
-	
-	else 
-	$userid = test_input($_POST["userid"]) ;	
-
-if (empty($_POST["password1"])){
-		$password1Err = "Password is Required" ;	
-	}
-	
-	else 
-	$password1 = test_input($_POST["password1"]) ;	
-
-
-}
-
-
-
-function test_input($data){
-	$data = trim($data);
-	$data = stripslashes($data);
-	$data = htmlspecialchars($data);
-    return $data ;	
-}
-?>
-
-
 
 
 <p><b>Enter Your Information:</b></p><hr>
